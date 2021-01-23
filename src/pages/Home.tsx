@@ -1,16 +1,21 @@
-import React, { FC, useEffect } from 'react'
-import logging from '../config/logging'
-import { IPage } from '../type/pages'
+import React, { useEffect } from "react";
+import { IPage } from "../types/pages";
+import logging from "../config/logging";
+import { Card, CardBody, CardHeader } from "reactstrap";
 
-const Home: FC<IPage> = ({ name }) => {
+const HomePage: React.FunctionComponent<IPage> = (props) => {
   useEffect(() => {
-    logging.info(`Loading ${name}`)
-  }, [name])
-  return (
-    <div>
-      This is the HOME page!
-    </div>
-  )
-}
+    logging.info(`Loading ${props.name}`);
+  }, [props.name]);
 
-export default Home
+  return (
+    <Card>
+      <CardHeader>Auth Example</CardHeader>
+      <CardBody>
+        This page needs auth! If you can see me, you are authenitcated!
+      </CardBody>
+    </Card>
+  );
+};
+
+export default HomePage;

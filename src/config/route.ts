@@ -1,26 +1,27 @@
-import AboutPage from '../pages/About';
-import HomePage from '../pages/Home';
-import { IRoute } from '../type/route';
+import { IRoute } from "../types/route";
+import HomePage from "../pages/home";
+import LoginPage from "../pages/login";
+import RegisterPage from "../pages/register";
 
 const routes: IRoute[] = [
   {
-    path: '/',
-    name: 'Home Page',
+    path: "/",
+    name: "Home Page",
     component: HomePage,
-    exact: true
+    exact: true,
   },
   {
-    path: '/about',
-    name: 'About Page',
-    component: AboutPage,
-    exact: true
+    path: "/login",
+    name: "Login Page",
+    component: LoginPage,
+    exact: true,
   },
   {
-    path: '/about/:number',
-    name: 'About Page',
-    component: AboutPage,
-    exact: true
+    path: "/register",
+    name: "Register Page",
+    component: RegisterPage,
+    exact: true,
   },
-]
+];
 
 export default routes;
